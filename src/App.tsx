@@ -313,7 +313,7 @@ function App() {
         <div className="relative z-10 h-screen flex items-center justify-center px-4">
           <AnimatedSection className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-serif transform transition-all duration-1000 hover:scale-105 animate-float">
-              Mais negócios, menos burocracia
+              Mais negócios, menos trabalho
               <span className="block text-amber-400 mt-4 animate-pulse">A revolução da IA no Direito começa agora</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 transform transition-all duration-1000 hover:scale-105 animate-fade-in">
