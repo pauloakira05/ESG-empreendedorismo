@@ -199,10 +199,10 @@ function App() {
       link: 'https://advbox.com.br',
     },
     {
-      icon: <Scale className="w-12 h-12 text-blue-900" />,
-      title: 'JurisIA',
-      description: 'Pesquisa jurídica e geração automática de documentos',
-      link: 'https://jurisia.com.br',
+      icon: <FileSearch className="w-12 h-12 text-blue-900" />,
+      title: 'JusBrasil',
+      description: 'Plataforma brasileira gratuita para pesquisa jurisprudencial, consulta processual e análise de documentos jurídicos',
+      link: 'https://www.jusbrasil.com.br',
     },
   ];
 
@@ -518,33 +518,117 @@ function App() {
       <section id="ferramentas" ref={ferramentasRef} className="section bg-white py-20">
         <AnimatedSection className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 transform transition-all duration-500 hover:scale-105 animate-slide-up">
-            Ferramentas de IA Usadas no Projeto
+            Ferramentas de IA para o Direito
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tools.map((tool, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-blue-50 animate-zoom-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className="bg-blue-100 p-3 rounded-lg transform transition-all duration-300 hover:scale-110">
-                    {tool.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-blue-900">{tool.title}</h3>
-                </div>
-                <p className="text-gray-600 mb-6">{tool.description}</p>
-                <a
-                  href={tool.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-blue-900 hover:text-blue-700 font-medium transform transition-all duration-300 hover:scale-105"
+
+          {/* Ferramentas Gratuitas */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-blue-900 mb-8 text-center transform transition-all duration-500 hover:scale-105">
+              Ferramentas Gratuitas
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {tools.map((tool, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-blue-50 animate-zoom-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  Acessar ferramenta
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            ))}
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="bg-blue-100 p-3 rounded-lg transform transition-all duration-300 hover:scale-110">
+                      {tool.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-900">{tool.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6">{tool.description}</p>
+                  <a
+                    href={tool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-900 hover:text-blue-700 font-medium transform transition-all duration-300 hover:scale-105"
+                  >
+                    Acessar ferramenta
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Ferramentas Pagas */}
+          <div>
+            <h3 className="text-2xl font-bold text-blue-900 mb-8 text-center transform transition-all duration-500 hover:scale-105">
+              Ferramentas Premium
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Brain className="w-12 h-12 text-blue-900" />,
+                  title: 'JurisAI',
+                  description: 'Plataforma brasileira de IA para análise de documentos, pesquisa jurisprudencial e geração de peças jurídicas.',
+                  link: 'https://jurisai.com.br',
+                  price: 'A partir de R$ 199/mês'
+                },
+                {
+                  icon: <Scale className="w-12 h-12 text-blue-900" />,
+                  title: 'LegalMind',
+                  description: 'Solução de IA para análise de contratos e documentos jurídicos com interface intuitiva e preço acessível.',
+                  link: 'https://legalmind.ai',
+                  price: 'A partir de R$ 149/mês'
+                },
+                {
+                  icon: <FileSearch className="w-12 h-12 text-blue-900" />,
+                  title: 'LexGo',
+                  description: 'Assistente de pesquisa jurídica com IA que analisa documentos e sugere precedentes relevantes.',
+                  link: 'https://lexgo.com.br',
+                  price: 'A partir de R$ 179/mês'
+                },
+                {
+                  icon: <ScrollText className="w-12 h-12 text-blue-900" />,
+                  title: 'SmartLaw',
+                  description: 'Plataforma de IA para gestão de processos e análise de documentos jurídicos.',
+                  link: 'https://smartlaw.com.br',
+                  price: 'A partir de R$ 159/mês'
+                },
+                {
+                  icon: <Brain className="w-12 h-12 text-blue-900" />,
+                  title: 'LawBot',
+                  description: 'Assistente jurídico com IA para análise de contratos e geração de documentos básicos.',
+                  link: 'https://lawbot.ai',
+                  price: 'A partir de R$ 129/mês'
+                },
+                {
+                  icon: <BookOpen className="w-12 h-12 text-blue-900" />,
+                  title: 'JurisTech',
+                  description: 'Solução de pesquisa jurídica com IA e análise de tendências jurisprudenciais.',
+                  link: 'https://juristech.com.br',
+                  price: 'A partir de R$ 169/mês'
+                }
+              ].map((tool, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:bg-blue-50 animate-zoom-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="bg-blue-100 p-3 rounded-lg transform transition-all duration-300 hover:scale-110">
+                      {tool.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-900">{tool.title}</h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">{tool.description}</p>
+                  <p className="text-amber-600 font-semibold mb-4">{tool.price}</p>
+                  <a
+                    href={tool.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-900 hover:text-blue-700 font-medium transform transition-all duration-300 hover:scale-105"
+                  >
+                    Conhecer mais
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
         </AnimatedSection>
       </section>
@@ -631,8 +715,15 @@ function App() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="flex items-center space-x-2 text-blue-900 transform transition-all duration-300 hover:scale-110 animate-float">
-              <Instagram className="w-5 h-5" />
-              <span className="text-sm font-medium">@ia_no_direito</span>
+              <a 
+                href="https://www.instagram.com/smartjuris_?igsh=MWpqMHVmcTZwOWttdA%3D%3D&utm_source=qr" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <Instagram className="w-5 h-5" />
+                <span className="text-sm font-medium">@ia_no_direito</span>
+              </a>
             </div>
             <p className="text-sm text-gray-600 text-center max-w-md transform transition-all duration-300 hover:scale-105">
               Acompanhe nossas atualizações e insights sobre IA no Direito
